@@ -1,19 +1,19 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './index.html',
+    './src/**/*.{js,jsx,ts,tsx}',
   ],
-  darkMode: 'class', // ou 'media' se preferir ativar automaticamente baseado no tema do sistema
   theme: {
     extend: {
       colors: {
         darkBlue: {
-          900: '#0a1f44',
-          800: '#0d2755',
-          700: '#102d66',
+          900: '#0a3d62', // Azul marinho
+          800: '#093a5d', // Azul marinho um pouco mais escuro para hover
         },
-        lightBlue: '#5c9ecd',
+        red: {
+          400: '#ff6f61', // Vermelho claro
+        },
       },
     },
   },

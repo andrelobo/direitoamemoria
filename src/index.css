@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-darkBlue-900 text-lightBlue;
+  @apply bg-darkBlue-900 text-red-400; /* Corrigido ttext-red-400 para text-red-400 */
 }
