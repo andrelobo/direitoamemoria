@@ -1,18 +1,14 @@
-// MP3Player.js
+// MP3Player.jsx
 import React, { useState, useRef, useEffect } from 'react';
 import { FiPlay, FiPause, FiVolume2, FiRewind, FiFastForward } from 'react-icons/fi';
 import { FaInstagram } from 'react-icons/fa';
 
-const MP3Player = () => {
+const MP3Player = ({ audioSrc, imageSrc, imageName }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.5);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const audioRef = useRef(new Audio('/audio1.mp3'));
-
-  const logoSrc = '/logo.png'; // Logo não dinâmico
-  const imageSrc = '/raymunda-maria.png'; // Caminho da imagem
-  const imageName = 'Raymunda Maria'; // Nome da imagem
+  const audioRef = useRef(new Audio(audioSrc));
 
   useEffect(() => {
     audioRef.current.volume = volume;
@@ -38,13 +34,15 @@ const MP3Player = () => {
     return () => {
       audioRef.current.removeEventListener('loadedmetadata', handleLoadedMetadata);
     };
-  }, []);
+  }, [audioSrc]);
 
   const handlePlayPause = () => {
     if (isPlaying) {
       audioRef.current.pause();
+      console.log('Audio paused');
     } else {
       audioRef.current.play().catch(handleError);
+      console.log('Audio playing');
     }
     setIsPlaying(!isPlaying);
   };
@@ -66,7 +64,7 @@ const MP3Player = () => {
 
   return (
     <div className="max-w-md mx-auto p-6 bg-darkBlue-900 rounded-lg shadow-md flex flex-col items-center">
-      <img src={logoSrc} alt="Logo" className="mb-4 w-50 h-14 object-contain" />
+      <img src="/logo.png" alt="Logo" className="mb-4 w-50 h-14 object-contain" />
       <div className="mb-4 w-48 h-128">
         <img src={imageSrc} alt={imageName} className="object-cover w-full h-full" />
       </div>
