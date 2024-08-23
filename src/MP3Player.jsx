@@ -64,11 +64,11 @@ const MP3Player = ({ audioSrc, imageSrc, imageName }) => {
 
   return (
     <div className="max-w-md mx-auto p-6 bg-darkBlue-900 rounded-lg shadow-md flex flex-col items-center">
-      <img src="/logo.png" alt="Logo" className="mb-4 w-50 h-14 object-contain" />
+      <img src="/logo.png" alt="Logo" className="mb-4 w-60 h-16 object-contain" />
       <div className="mb-4 w-48 h-128">
         <img src={imageSrc} alt={imageName} className="object-cover w-full h-full" />
       </div>
-      <div className="text-white text-2xl font-bold mb-2">{imageName}</div>
+      <div className="text-white text-2xl mb-2">{imageName}</div>
       <div className="w-full mb-4">
         <input
           type="range"
@@ -77,26 +77,26 @@ const MP3Player = ({ audioSrc, imageSrc, imageName }) => {
           step="0.1"
           value={currentTime}
           onChange={handleTimeChange}
-          className="w-full bg-darkRed-900 rounded-lg"
+          className="w-full  rounded-xl"
         />
       </div>
       <div className="flex justify-center items-center mb-6">
-        <button className="bg-darkRed-900 p-3 rounded-full hover:bg-darkRed-700" onClick={() => audioRef.current.currentTime -= 10}>
-          <FiRewind className="text-white text-xl" />
+        <button className="p-3 rounded-full hover:bg-darkRed-700" onClick={() => audioRef.current.currentTime -= 10}>
+          <FiRewind className="text-white text-[2.5rem]" />
         </button>
-        <button className="bg-darkRed-900 p-3 mx-4 rounded-full hover:bg-darkRed-700" onClick={handlePlayPause}>
+        <button className="p-3 mx-4 rounded-full hover:bg-darkRed-700" onClick={handlePlayPause}>
           {isPlaying ? (
-            <FiPause className="text-white text-xl" />
+            <FiPause className="text-white text-[2.5rem]" />
           ) : (
-            <FiPlay className="text-white text-xl" />
+            <FiPlay className="text-white text-[2.5rem]" />
           )}
         </button>
-        <button className="bg-darkRed-900 p-3 rounded-full hover:bg-darkRed-700" onClick={() => audioRef.current.currentTime += 10}>
-          <FiFastForward className="text-white text-xl" />
+        <button className="p-3 rounded-full hover:bg-darkRed-700" onClick={() => audioRef.current.currentTime += 10}>
+          <FiFastForward className="text-white text-[2.5rem]" />
         </button>
       </div>
       <div className="flex items-center w-full justify-between mb-6">
-        <FiVolume2 className="text-darkRed-900 text-xl" />
+        <FiVolume2 className="text-white text-[2.5rem]" />
         <input
           type="range"
           min="0"
@@ -108,7 +108,7 @@ const MP3Player = ({ audioSrc, imageSrc, imageName }) => {
         />
       </div>
       <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="mt-4">
-        <FaInstagram className="text-darkRed-900 text-2xl hover:text-darkRed-700" />
+        <FaInstagram className="text-darkRed-900 text-4xl hover:text-darkRed-700" />
       </a>
     </div>
   );

@@ -5,6 +5,13 @@ const App = () => {
  
   const data = [
     {
+      name: '',
+      audioSrc: 'raymunda-maria.mp3',
+      imageSrc: 'raymunda-maria.png',
+      imageName: 'Raymunda Maria',
+    },
+
+    {
       name: 'apolinaria-maria-da-conceicao',
       audioSrc: 'apolinaria-maria-da-conceicao.mp3',
       imageSrc: 'apolinaria-maria-da-conceicao.png',
@@ -74,11 +81,13 @@ const App = () => {
 
   const characterName = window.location.pathname.split('/').pop(); // Obtém o nome do personagem da URL
 
-  const characterData = data.filter(item => item.name === characterName);
+  let characterData = data.filter(item => item.name === characterName);
 
+  // Se não encontrar o personagem, mostra Raymunda Maria por padrão
   if (characterData.length === 0) {
-    return <div>Personagem não encontrado</div>;
+    characterData = data.filter(item => item.name === '');
   }
+
 
   return (
     <div>
