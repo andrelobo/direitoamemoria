@@ -3,5 +3,6 @@
 @tailwind utilities;
 
 body {
+  font-family: 'Montserrat', sans-serif;
   @apply bg-darkBlue-900 text-red-400; /* Corrigido ttext-red-400 para text-red-400 */
 }

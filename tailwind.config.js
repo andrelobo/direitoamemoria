@@ -8,15 +8,15 @@ module.exports = {
     extend: {
       colors: {
         darkBlue: {
-          900: '#0a3d62', // Azul marinho
-          800: '#093a5d', // Azul marinho um pouco mais escuro para hover
+          900: ' #1A0663', // Azul marinho
+          800: ' #1A0663', // Azul marinho um pouco mais escuro para hover
         },
         darkRed: {
-          900: '#ff6f61', // Vermelho
+          900: '#EC1C24', // Vermelho
 
         },
         red: {
-          400: '#ff6f61', // Vermelho claro
+          400: '#EC1C24', // Vermelho claro
         },
       },
     },
