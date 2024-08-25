@@ -107,7 +107,7 @@ const MP3Player = ({ audioSrc, imageSrc, imageName }) => {
           className="w-full ml-4 bg-darkRed-900 rounded-lg"
         />
       </div>
-      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="mt-4">
+      <a href="https://www.instagram.com/direitoamemoria" target="_blank" rel="noopener noreferrer" className="mt-4">
         <FaInstagram className="text-darkRed-900 text-4xl hover:text-darkRed-700" />
       </a>
     </div>
